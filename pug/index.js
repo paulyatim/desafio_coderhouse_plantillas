@@ -8,7 +8,6 @@ app.use(express.static("./public"));
 
 const productos = new Productos();
 
-
 app.set('views', './views');
 app.set('view engine', 'pug');
 
@@ -18,7 +17,7 @@ router.post("/", (req, res) => {
             productos.save(req.body)
             res.status(201).redirect("/productos")
         } else {
-            res.status(400).render("Complete los datos obligatorios")
+            res.status(400).redirect("/productos")
         }
     } catch(error) {
         res.status(500).render(error.message)
@@ -29,7 +28,6 @@ router.get("/", (req, res) => {
     try {
         const prods = { productos: productos.getAll}
         res.render('main', prods)
-        console.log(prods)
         res.status(200)
     } catch(error) {
         res.status(500).render(error.message)

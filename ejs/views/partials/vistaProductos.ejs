@@ -1,9 +1,25 @@
-<% if (prods.length > 0) { %>
-    <% prods.forEach(function(producto) { %>
-        <h2><%= producto.nombre %></h2>
-        <h2><%= producto.precio %></h2>
-        <img style="height: 40px;" src=<%= producto.imagen %> alt="icon">
-    <%}) %>
-<% } else{ %>
-        <h2>No hay productos</h2>
-<%  } %>
+<table style="font-size: 28px;" class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Icono</th>
+        </tr>
+    </thead>
+        <tbody>
+            <% if (prods.length > 0) { %>
+                <% prods.forEach(function(producto) { %>
+                    <tr>
+                        <th><%= producto.nombre %></th>
+                        <td><%= producto.precio %></td>
+                        <td><img style="height: 40px;" src=<%= producto.imagen %> alt="icon"></td>
+                    </tr>
+                <%}) %>
+            <% } else{ %>
+                <tr>
+                    <th style="color: red;">No hay productos</th>
+                </tr>
+            <%  } %>
+        </tbody>
+    </table>
+

@@ -17,7 +17,7 @@ router.post("/", (req, res) => {
             productos.save(req.body)
             res.status(201).redirect("/productos")
         } else {
-            res.status(400).render("Complete los datos obligatorios")
+            res.status(400).redirect("/productos")
         }
     } catch(error) {
         res.status(500).render(error.message)
