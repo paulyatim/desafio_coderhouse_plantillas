@@ -1,0 +1,10 @@
+<h2>Vista de Productos:</h2>
+{{#if productos}}
+    {{#each productos}}
+        <h2>{{nombre}}</h2>
+        <h2 class="lead">{{precio}}</h2>
+        <img style="height: 40px;" src={{imagen}} alt="icon">
+    {{/each}}
+    {{else}}
+        <h2>No hay productos</h2>
+{{/if}}

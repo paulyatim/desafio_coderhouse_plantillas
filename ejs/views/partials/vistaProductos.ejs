@@ -1,0 +1,9 @@
+<% if (prods.length > 0) { %>
+    <% prods.forEach(function(producto) { %>
+        <h2><%= producto.nombre %></h2>
+        <h2><%= producto.precio %></h2>
+        <img style="height: 40px;" src=<%= producto.imagen %> alt="icon">
+    <%}) %>
+<% } else{ %>
+        <h2>No hay productos</h2>
+<%  } %>
